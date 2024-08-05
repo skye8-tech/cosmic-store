@@ -1,9 +1,5 @@
-function Home() {
+export default function Home() {
   return (
-    <div className={"relative"}>
-      <marquee behavior="scroll">This is the home</marquee>
-    </div>
+    <h1 className="text-3xl font-bold underline text-red-600">Hello world!</h1>
   );
 }
-
-export default Home;
