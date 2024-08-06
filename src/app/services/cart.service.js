@@ -1,16 +1,23 @@
-import { createApi } from "@reduxjs/toolkit/react/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const cartApi = createApi({
-  name: "cartApi",
-  preparedHeaders: (getState, { headers }) => {
-    const { token } = getState().auth;
-    if (token) {
-      headers.set("Authorization", "Bearer " + token);
-    }
-  },
-  reducers: ({ builder }) => {
-    createCart: builder.mutation({});
-  },
+export const cartApi = createApi({
+  reducerPath: "cartApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: `baseurl/carts`,
+    preparedHeaders: (headers, { getState }) => {
+      const {
+        auth: { token },
+      } = getState();
+      if (token) {
+        headers.set("Authorization", "Bearer " + token);
+      }
+    },
+  }),
+  endpoints: (builder) => ({
+    createCart: builder.mutation({
+      query: (body) => ({ url: "/create", method: "POST", body }),
+    }),
+  }),
 });
 
-export const { useCreateCartMutation } = cartApi.reducers;
+export const { useCreateCartMutation } = cartApi;
