@@ -3,7 +3,7 @@ import { createApi } from "@reduxjs/toolkit/react/query";
 const cartApi = createApi({
   name: "cartApi",
   preparedHeaders: (getState, { headers }) => {
-    const { token } = getState();
+    const { token } = getState().auth;
     if (token) {
       headers.set("Authorization", "Bearer " + token);
     }
