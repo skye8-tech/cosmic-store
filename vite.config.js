@@ -17,6 +17,7 @@ export default defineConfig({
       "@router": "/src/router",
       "@util": "/src/util",
       "@lib": "/src/lib",
+      "@layouts": "/src/layouts",
     },
   },
 });
