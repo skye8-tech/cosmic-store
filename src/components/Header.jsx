@@ -28,7 +28,7 @@ const Header = () => {
                   <a href="#">About</a>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">Sign Up</a>
+                  <a href="/register">Sign Up</a>
                 </li>
               </ul>
             </nav>
@@ -57,7 +57,7 @@ const Header = () => {
                 <a href="#">About</a>
               </li>
               <li className="whitespace-nowrap p-2">
-                <a href="#">Sign Up</a>
+                <a href="register">Sign Up</a>
               </li>
             </ul>
             <hr />
