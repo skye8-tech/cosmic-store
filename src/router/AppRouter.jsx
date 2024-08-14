@@ -1,6 +1,6 @@
 import Layout from "@layouts/Layout";
 import { Home } from "@pages";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 const children = [{ element: <Home />, path: "/" }];
 
