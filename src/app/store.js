@@ -6,7 +6,8 @@ export const store = configureStore({
     [cartApi.reducerPath]: cartApi.reducer,
     [productApi.reducerPath]: productApi.reducer,
   },
-  middleware: (middlewares) => [
-    middlewares.concat(cartApi.middleware).concat(productApi.middleware),
-  ],
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(cartApi.middleware)
+      .concat(productApi.middleware),
 });
