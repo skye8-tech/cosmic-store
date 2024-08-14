@@ -5,6 +5,7 @@ import {
   IoMenu,
   IoCloseSharp,
 } from "react-icons/io5";
+import {Link} from 'react-router-dom';
 import { IoIosHeartEmpty } from "react-icons/io";
 
 const Header = () => {
@@ -57,7 +58,7 @@ const Header = () => {
                 <a href="#">About</a>
               </li>
               <li className="whitespace-nowrap p-2">
-                <a href="register">Sign Up</a>
+                <Link to="/register">Sign Up</Link>
               </li>
             </ul>
             <hr />
