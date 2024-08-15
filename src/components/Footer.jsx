@@ -10,10 +10,10 @@ const Footer = () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-3">
               <h4 className="text-2xl font-medium tracking-wide">Exclusive</h4>
-              <a href="#" className="text-xl">
+              <Link to="#" className="text-xl">
                 Subscribe
-              </a>
-              <a href="#">Get 10% off your first order</a>
+              </Link>
+              <Link to="#">Get 10% off your first order</Link>
             </div>
             <div className="bg-inherit relative text-xs rounded-md border">
               <input
@@ -35,20 +35,20 @@ const Footer = () => {
           <div>
             <h4>Account</h4>
             <div>
-              <a href="#">My Account</a>
-              <a href="#">Login / Register</a>
-              <a href="#">Cart</a>
-              <a href="#">Wishlist</a>
-              <a href="#">Shop</a>
+              <Link to="/profile">My Account</Link>
+              <Link to="/login">Login / Register</Link>
+              <Link to="/cart">Cart</Link>
+              <Link to="/wishlist">Wishlist</Link>
+              <Link to="/shop">Shop</Link>
             </div>
           </div>
           <div>
             <h4>Quick Link</h4>
             <div>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms Of Use</a>
-              <a href="#">FAQ</a>
-              <a href="#">Contact</a>
+              <Link to="/policy">Privacy Policy</Link>
+              <Link to="/terms">Terms Of Use</Link>
+              <Link to="/faqs">FAQ</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
           <div>
@@ -171,18 +171,18 @@ const Footer = () => {
                 </svg>
               </div>
               <div>
-                <a href="#">
+                <Link to="#">
                   <FaFacebookF />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <FiTwitter />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <FaInstagram />
-                </a>
-                <a href="#">
+                </Link>
+                <Link to="#">
                   <FaLinkedinIn />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
