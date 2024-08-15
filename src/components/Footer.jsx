@@ -1,6 +1,7 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { VscSend } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
