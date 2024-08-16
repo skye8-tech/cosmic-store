@@ -4,8 +4,8 @@ function Button(props) {
   const buttonClasses = `
  ${
    variant === "primary"
-     ? "bg-secondary2 font-bold  text-white py-2 px-4 flex flex-row justify-center items-center gap-4 rounded-lg hover:bg-black hover:text-secondary2"
-     : "bg-none font-normal text-black border border-black py-2 px-4 flex flex-row justify-center items-center gap-4 rounded-lg hover:bg-secondary2 hover:text-white"
+     ? "bg-secondary2 font-bold  text-white text-xl py-3 px-4 flex flex-row justify-center items-center gap-4 rounded-lg hover:bg-black hover:text-secondary2"
+     : "bg-none font-normal text-black text-xl border border-black py-3 px-4 flex flex-row justify-center items-center gap-4 rounded-lg hover:bg-secondary2 hover:text-white"
  }
  ${width}
 `;
