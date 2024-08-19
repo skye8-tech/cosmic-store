@@ -26,7 +26,7 @@ const Header = () => {
                   <a href="#">Contact</a>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">About</a>
+                  <a href="/about">About</a>
                 </li>
                 <li className="whitespace-nowrap">
                   <a href="/register">Sign Up</a>
