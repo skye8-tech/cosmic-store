@@ -4,12 +4,13 @@ import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import Contact from "@pages/contact/Contact";
 
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-const children = [{ element: <Home />, path: "/" },
-  {element: <Register/> , path:"/register"},
-  {element: <Login/> , path:"/login"},
-  {element: <Contact/>, path:"/contact"}
+const children = [
+  { element: <Home />, path: "/" },
+  { element: <Register />, path: "/register" },
+  { element: <Login />, path: "/login" },
+  { element: <Contact />, path: "/contact" },
 ];
 
 export const router = createBrowserRouter([
