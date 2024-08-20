@@ -99,16 +99,16 @@ function CartForm() {
             </div>
             <div className="w-full lg:w-1/2 flex flex-col p-6 border border-gray-800 rounded-lg ">
               <div>
-                <p>Cart Total</p>
-                <div className="flex flex-row justify-between py-3 border-b-2 border-gray-300">
+                <p className='font-bold'>Cart Total</p>
+                <div className="flex flex-row text-sm justify-between py-3 border-b-2 border-gray-300">
                   <p>Subtotal</p>
                   <p>$1750</p>
                 </div>
-                <div className="flex flex-row justify-between py-3 border-b-2 border-gray-300">
+                <div className="flex flex-row text-sm justify-between py-3 border-b-2 border-gray-300">
                   <p>Shipping </p>
                   <p>Free</p>
                 </div>
-                <div className="flex flex-row justify-between py-3 ">
+                <div className="flex flex-row text-sm justify-between py-3 ">
                   <p>Total</p>
                   <p>1750</p>
                 </div>
