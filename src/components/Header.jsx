@@ -5,7 +5,7 @@ import {
   IoMenu,
   IoCloseSharp,
 } from "react-icons/io5";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
 
 const Header = () => {
@@ -95,7 +95,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <hr className="border-t mt-3" />
+      <hr className="mt-3" />
     </>
   );
 };
