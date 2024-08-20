@@ -9,7 +9,7 @@ function SubHeader(props) {
     <>
       <section className="px-4 ">
         <div className="max-w-6xl mx-auto flex  flex-row items-center  my-8 gap-4 ">
-          <p> {parentPageHref}</p>
+          <p className='text-gray-400'> {parentPageHref}</p>
           <p>\</p>
           <p>{titleHref}</p>
           <p>\</p>
