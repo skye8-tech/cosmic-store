@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
 
 
-            <div className='md:shrink-0'>
+            <div className='md:shrink-0 md:mt-0 mt-10'>
                 <form>
                     <div className='bg-white shadow-lg h-[38rem] md:h-[40rem] w-[30rem] md:w-[43rem]  mx-auto md:mx-12 '>
                     <div className=' pt-12 mx-6'>
