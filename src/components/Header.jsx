@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import {
-  IoSearchOutline,
-  IoCartOutline,
-  IoMenu,
-  IoCloseSharp,
-} from "react-icons/io5";
-import {Link} from 'react-router-dom';
+import { useState } from "react";
 import { IoIosHeartEmpty } from "react-icons/io";
+import {
+  IoCartOutline,
+  IoCloseSharp,
+  IoMenu,
+  IoSearchOutline,
+} from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -20,16 +20,16 @@ const Header = () => {
             <nav className="hidden md:block">
               <ul className="flex md:gap-4 lg:gap-12 text-base">
                 <li className="whitespace-nowrap">
-                  <a href="#">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">About</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="/register">Sign Up</a>
+                  <Link to="/register">Sign Up</Link>
                 </li>
               </ul>
             </nav>
