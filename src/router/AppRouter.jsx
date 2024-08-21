@@ -1,5 +1,6 @@
 import Layout from "@layouts/Layout";
 import { Home } from "@pages";
+import About from "@pages/About/About";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
@@ -10,6 +11,7 @@ const children = [
   { element: <Register />, path: "/register" },
   { element: <Login />, path: "/login" },
   { element: <ProductDetails />, path: "/productdetails" },
+  { element: <About />, path: "/about" },
 ];
 
 export const router = createBrowserRouter([
