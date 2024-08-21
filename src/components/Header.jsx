@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { IoIosHeartEmpty } from "react-icons/io";
 import {
-  IoSearchOutline,
   IoCartOutline,
-  IoMenu,
   IoCloseSharp,
+  IoMenu,
+  IoSearchOutline,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -20,16 +21,16 @@ const Header = () => {
             <nav className="hidden md:block">
               <ul className="flex md:gap-4 lg:gap-12 text-base">
                 <li className="whitespace-nowrap">
-                  <a href="#">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">About</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="/register">Sign Up</a>
+                  <Link to="/register">Sign Up</Link>
                 </li>
               </ul>
             </nav>
@@ -48,18 +49,18 @@ const Header = () => {
             }`}
           >
             <ul className="text-center space-y-1">
-              <li className="whitespace-nowrap p-2 bg-secondary">
-                <a href="#">Home</a>
-              </li>
-              <li className="whitespace-nowrap p-2">
-                <a href="#">Contact</a>
-              </li>
-              <li className="whitespace-nowrap p-2">
-                <a href="#">About</a>
-              </li>
-              <li className="whitespace-nowrap p-2">
-                <Link to="/register">Sign Up</Link>
-              </li>
+              <li className="whitespace-nowrap">
+                  <Link to="/">Home</Link>
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link to="/contact">Contact</Link>
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link to="/about">About</Link>
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link to="/register">Sign Up</Link>
+                </li>
             </ul>
             <hr />
           </nav>
