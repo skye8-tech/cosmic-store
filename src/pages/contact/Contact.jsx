@@ -12,45 +12,41 @@ const Contact = () => {
           </h1>
         </div>
 
-        <div className="mt-30 md:mt-40 md:flex grid-flow-col mb-5 md:mb-24">
+        <div className="mt-16 md:mt-16 md:flex grid-flow-col mb-5 md:mb-24">
           <div className="bg-white shadow-lg  w-[30rem] h-[40rem] ">
-            <div className=" px-16">
-              <div className="flex gap-6">
+            <div className="px-16">
+              <div className="flex gap-4 items-center">
                 <div className="bg-secondary2 w-14 h-14 mt-12 rounded-full flex justify-center">
                   <FiPhone className="w-8 h-8 mt-3 text-white" />
                 </div>
 
-                <p className="text-xl md:text-2xl font-bold mt-12">
-                  Call To us
-                </p>
+                <p className="text-xl font-semibold mt-12">Call To us</p>
               </div>
-              <p className="font-semibold text-xl mt-6">
+              <p className="font-medium mt-6">
                 We are available 24/7, 7 days a week
               </p>
-              <p className="font-semibold text-xl mb-8 mt-6">
-                Phone: +8B01611112222
-              </p>
+              <p className="font-medium mb-8 mt-6">Phone: +8B01611112222</p>
               <div className="border border-bottom w-80   text-slate-300 "></div>
             </div>
 
             <div></div>
             <div className=" px-16">
-              <div className="flex gap-6 mt-10">
+              <div className="flex gap-4 mt-10 items-center">
                 <div className="bg-secondary2 w-14 h-14 rounded-full flex justify-center">
                   <FaRegEnvelope className="w-8 h-8 mt-3 text-white" />
                 </div>
 
-                <p className="text-xl md:text-2xl font-bold">Write To Us</p>
+                <p className="text-xl font-semibold">Write To Us</p>
               </div>
 
               <div>
-                <p className="font-semibold text-xl mt-6">
+                <p className="font-medium mt-6">
                   Fil out our form and we will contact you within 23hours
                 </p>
-                <p className="font-semibold text-xl mb-6 mt-6">
+                <p className="font-medium mb-6 mt-6">
                   Emails:customer@exclusive.com
                 </p>
-                <p className="font-semibold text-xl mb-6 mt-6">
+                <p className="font-medium mb-6 mt-6">
                   Emails:support@exclusive.com
                 </p>
               </div>
