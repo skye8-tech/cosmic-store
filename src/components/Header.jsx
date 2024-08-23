@@ -7,7 +7,6 @@ import {
   IoSearchOutline,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import { IoIosHeartEmpty } from "react-icons/io";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -50,17 +49,17 @@ const Header = () => {
           >
             <ul className="text-center space-y-1">
               <li className="whitespace-nowrap">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/contact">Contact</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/about">About</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/register">Sign Up</Link>
-                </li>
+                <Link to="/">Home</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/register">Sign Up</Link>
+              </li>
             </ul>
             <hr />
           </nav>
