@@ -1,4 +1,6 @@
+
 import React from "react";
+
 
 function TeamCard(props) {
   const { image, name, role, twitter, instagram, linkedin } = props;

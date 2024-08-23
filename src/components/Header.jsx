@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import {
-  IoSearchOutline,
-  IoCartOutline,
-  IoMenu,
-  IoCloseSharp,
-} from "react-icons/io5";
-import {Link} from 'react-router-dom';
+import { useState } from "react";
 import { IoIosHeartEmpty } from "react-icons/io";
+import {
+  IoCartOutline,
+  IoCloseSharp,
+  IoMenu,
+  IoSearchOutline,
+} from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -20,16 +20,16 @@ const Header = () => {
             <nav className="hidden md:block">
               <ul className="flex md:gap-4 lg:gap-12 text-base">
                 <li className="whitespace-nowrap">
-                  <a href="#">Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="#">Contact</a>
+                  <Link to="/contact">Contact</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="/about">About</a>
+                  <Link to="/about">About</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <a href="/register">Sign Up</a>
+                  <Link to="/register">Sign Up</Link>
                 </li>
               </ul>
             </nav>
@@ -48,16 +48,16 @@ const Header = () => {
             }`}
           >
             <ul className="text-center space-y-1">
-              <li className="whitespace-nowrap p-2 bg-secondary">
-                <a href="#">Home</a>
+              <li className="whitespace-nowrap">
+                <Link to="/">Home</Link>
               </li>
-              <li className="whitespace-nowrap p-2">
-                <a href="#">Contact</a>
+              <li className="whitespace-nowrap">
+                <Link to="/contact">Contact</Link>
               </li>
-              <li className="whitespace-nowrap p-2">
-                <a href="#">About</a>
+              <li className="whitespace-nowrap">
+                <Link to="/about">About</Link>
               </li>
-              <li className="whitespace-nowrap p-2">
+              <li className="whitespace-nowrap">
                 <Link to="/register">Sign Up</Link>
               </li>
             </ul>
@@ -97,7 +97,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <hr className="border-t mt-3" />
+      <hr className="mt-3" />
     </>
   );
 };

@@ -1,16 +1,20 @@
 import Layout from "@layouts/Layout";
 import { Home } from "@pages";
 import About from "@pages/About/About";
+import Account from "@pages/Account/Account";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import Cart from "@pages/Cart/Cart";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 
-const children = [{ element: <Home />, path: "/" },
-  {element: <Register/> , path:"/register"},
-  {element: <Login/> , path:"/login"},
-  {element: <About/>,path:"/about"},
-  {element: <Cart/>,path:"/cart"}
+
+const children = [
+  { element: <Home />, path: "/" },
+  { element: <Register />, path: "/register" },
+  { element: <Login />, path: "/login" },
+  { element: <About />, path: "/about" },
+    {element: <Cart/>,path:"/cart"}
+  { element: <Account />, path: "/account" },
 
 ];
 
