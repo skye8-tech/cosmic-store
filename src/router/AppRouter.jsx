@@ -4,13 +4,13 @@ import About from "@pages/About/About";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 const children = [
   { element: <Home />, path: "/" },
   { element: <Register />, path: "/register" },
   { element: <Login />, path: "/login" },
-  { element: <ProductDetails />, path: "/productdetails" },
+  { element: <ProductDetails />, path: "/product/:id" },
   { element: <About />, path: "/about" },
 ];
 
