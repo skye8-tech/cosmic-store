@@ -1,10 +1,10 @@
-import React from 'react'
+
+import React from "react";
 
 
 function TeamCard(props) {
-  
-    const {image,name,role,twitter,instagram,linkedin}=props 
- 
+  const { image, name, role, twitter, instagram, linkedin } = props;
+
   return (
     <div className="flex flex-col gap-6 w-full shadow-lg p-4">
       <div className="max-w-96 max-h-[430px]">
@@ -84,4 +84,4 @@ function TeamCard(props) {
   );
 }
 
-export default TeamCard
+export default TeamCard;

@@ -75,7 +75,9 @@ const Header = () => {
             </div>
             <div className="text-xl flex items-center md:gap-2 lg:gap-4">
               <IoIosHeartEmpty />
-              <IoCartOutline />
+              <a href="/cart">
+                <IoCartOutline />
+              </a>
             </div>
           </div>
         </div>
