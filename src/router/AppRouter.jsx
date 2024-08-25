@@ -1,6 +1,7 @@
 import Layout from "@layouts/Layout";
 import { Home } from "@pages";
 import About from "@pages/About/About";
+import Account from "@pages/Account/Account";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
@@ -12,6 +13,7 @@ const children = [
   { element: <Login />, path: "/login" },
   { element: <ProductDetails />, path: "/product/:id" },
   { element: <About />, path: "/about" },
+  { element: <Account />, path: "/account" },
 ];
 
 export const router = createBrowserRouter([
