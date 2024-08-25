@@ -1,7 +1,7 @@
 import Button from "@components/Button";
 import ProductCard from "@components/ProductCard";
 import SectionTitle from "@components/SectionTitle";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const ProductDetails = () => {
   const productImages = [
