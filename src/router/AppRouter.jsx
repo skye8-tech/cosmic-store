@@ -6,10 +6,9 @@ import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 
 import Cart from "@pages/Cart/Cart";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
-
 
 const children = [
   { element: <Home />, path: "/" },
@@ -17,9 +16,8 @@ const children = [
   { element: <Login />, path: "/login" },
   { element: <ProductDetails />, path: "/product/:id" },
   { element: <About />, path: "/about" },
-    {element: <Cart/>,path:"/cart"}
+  { element: <Cart />, path: "/cart" },
   { element: <Account />, path: "/account" },
-
 ];
 
 export const router = createBrowserRouter([
