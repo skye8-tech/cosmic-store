@@ -22,19 +22,19 @@ const checkout = () => {
 
                 <form className='flex flex-col gap-4'>
                 <label className='text-xl'>First Name</label>
-                <input type='text'name='first Name' className='bg-[#F5F5F5] w-full  md:h-10'/>
+                <input type='text'name='first Name' className='bg-[#F5F5F5] w-full  md:h-10 focus:outline-none'/>
                 <label className='text-xl'>Company Name</label>
-                <input type='text'name='Name' className='bg-[#F5F5F5] w-full    md:h-10'/>
+                <input type='text'name='Name' className='bg-[#F5F5F5] w-full  md:h-10  focus:outline-none'/>
                 <label className='text-xl'>Street Address</label>
-                <input type='text'name='Address' className='bg-[#F5F5F5] w-full   md:h-10'/>
+                <input type='text'name='Address' className='bg-[#F5F5F5] w-full md:h-10 focus:outline-none'/>
                 <label className='text-xl'>Appointment, float, etc(Optional)</label>
-                <input type='text'name='' className='bg-[#F5F5F5] w-full    md:h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full  md:h-10 focus:outline-none'/>
                 <label className='text-xl'>Town/City</label>
-                <input type='text'name='' className='bg-[#F5F5F5] w-full  md:h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full md:h-10 focus:outline-none'/>
                 <label className='text-xl'>Phone Number</label>
-                <input type='text'name='' className='bg-[#F5F5F5] w-full   md:h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full md:h-10 focus:outline-none'/>
                 <label className='text-xl'>Email Address</label>
-                <input type='text'name='Email' className='bg-[#F5F5F5] w-full   md:h-10'/>
+                <input type='text'name='Email' className='bg-[#F5F5F5] w-full  md:h-10 focus:outline-none'/>
                 <div className='flex items-center gap-4 mt-4 mb-20'>
                 <input type='checkbox' value="" className='bg-black'/>
                 <label className='text-xl'>Save this information for faster check-out next time</label>
