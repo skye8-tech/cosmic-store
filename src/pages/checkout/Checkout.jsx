@@ -11,30 +11,30 @@ const checkout = () => {
   return (
 
     <section className='px-4' >
-      <div className='max-w-6xl  md:mx-auto mx-2'>
+      <div className='max-w-6xl  mx-auto'>
         <div className='mt-10'>
             <h1>Account/My Account/ Product/View Cart/<span className='font-bold'>Checkout</span></h1>
         </div>
 
-        <div className='flex justify-between md:grid-cols-1 md:flex-row flex-col mr-2 sm:mr-auto'>
-            <div className=''>
+        <div className='flex justify-between  max-md:flex-col md:flex-wrap lg:flex-row gap-5'>
+            <div className='flex-1'>
                 <h1 className='font-bold text-4xl mt-10 mb-8'>Billing Details</h1>
 
-                <form className='flex flex-col gap-x-10 gap-4'>
+                <form className='flex flex-col gap-4'>
                 <label className='text-xl'>First Name</label>
-                <input type='text'name='first Name' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='first Name' className='bg-[#F5F5F5] w-full  md:h-10'/>
                 <label className='text-xl'>Company Name</label>
-                <input type='text'name='Name' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='Name' className='bg-[#F5F5F5] w-full    md:h-10'/>
                 <label className='text-xl'>Street Address</label>
-                <input type='text'name='Address' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='Address' className='bg-[#F5F5F5] w-full   md:h-10'/>
                 <label className='text-xl'>Appointment, float, etc(Optional)</label>
-                <input type='text'name='' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full    md:h-10'/>
                 <label className='text-xl'>Town/City</label>
-                <input type='text'name='' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full  md:h-10'/>
                 <label className='text-xl'>Phone Number</label>
-                <input type='text'name='' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem]  h-10'/>
+                <input type='text'name='' className='bg-[#F5F5F5] w-full   md:h-10'/>
                 <label className='text-xl'>Email Address</label>
-                <input type='text'name='Email' className='bg-[#F5F5F5] md:w-[35rem] w-[33rem] h-10'/>
+                <input type='text'name='Email' className='bg-[#F5F5F5] w-full   md:h-10'/>
                 <div className='flex items-center gap-4 mt-4 mb-20'>
                 <input type='checkbox' value="" className='bg-black'/>
                 <label className='text-xl'>Save this information for faster check-out next time</label>
@@ -47,7 +47,7 @@ const checkout = () => {
             
             {/**right side */}
 
-            <div className='md:mt-36'>
+            <div className='md:mt-36 mt-atuo flex-1'>
               <div className='flex justify-between gap-16'>
                 <div className='flex gap-x-8 items-center'>
                  <div>
