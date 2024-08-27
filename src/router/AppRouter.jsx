@@ -4,11 +4,11 @@ import About from "@pages/About/About";
 import Account from "@pages/Account/Account";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
-
 import Cart from "@pages/Cart/Cart";
 import { createBrowserRouter } from "react-router-dom";
 
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
+import Page404 from "@pages/page404/Page404";
 
 const children = [
   { element: <Home />, path: "/" },
@@ -18,6 +18,8 @@ const children = [
   { element: <About />, path: "/about" },
   { element: <Cart />, path: "/cart" },
   { element: <Account />, path: "/account" },
+  { element: <Page404 />, path: "/*" }
+
 ];
 
 export const router = createBrowserRouter([
