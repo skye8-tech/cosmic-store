@@ -22,25 +22,22 @@ function SubHeader(props) {
     <>
       <section className="px-4 ">
         <div className="max-w-6xl mx-auto flex  flex-row items-center  my-8 gap-1 ">
-          <span className="text-gray-400"> {parentPageHref}</span>
-          <span>/</span>
-          <span>{titleHref}</span>
-          <span>/</span>
-          <span>{subTitleHref}</span>
+          <Link to={""} className="text-gray-400">
+            Account
+          </Link>
+          <span> / </span>
+          {paths.map((path) => (
+            <>
+              {/* <Link to={`/${path}`}>{path}</Link> */}
+              {paths[paths.length - 1] == path ? (
+                <Link to={`${path}`}>{path}</Link>
+              ) : (
+                <Link to={`/${path}`}>{path}</Link>
+              )}
+              {paths[paths.length - 1] == path ? <></> : <span> / </span>}
+            </>
+          ))}
         </div>
-        <Link to={""}>Account</Link>
-        <span> / </span>
-        {paths.map((path) => (
-          <>
-            {/* <Link to={`/${path}`}>{path}</Link> */}
-            {paths[paths.length - 1] == path ? (
-              <Link to={`${path}`}>{path}</Link>
-            ) : (
-              <Link to={`/${path}`}>{path}</Link>
-            )}
-            {paths[paths.length - 1] == path ? <></> : <span> / </span>}
-          </>
-        ))}
       </section>
     </>
   );
