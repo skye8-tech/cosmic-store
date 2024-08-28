@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { AppContext } from "@providers";
+import { useContext, useState } from "react";
 import { IoIosHeartEmpty } from "react-icons/io";
 import {
   IoCartOutline,
@@ -10,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const { isLoggedIn, logOut, logIn } = useContext(AppContext);
   return (
     <>
       <header className="px-4">
@@ -29,7 +31,18 @@ const Header = () => {
                   <Link to="/about">About</Link>
                 </li>
                 <li className="whitespace-nowrap">
-                  <Link to="/register">Sign Up</Link>
+                  {isLoggedIn ? (
+                    <Link to="" onClick={logOut}>
+                      Log Out
+                    </Link>
+                  ) : (
+                    <Link to="" onClick={logIn}>
+                      Sign Up
+                    </Link>
+                  )}
+                </li>
+                <li className="whitespace-nowrap">
+                  <Link to="/account">Account</Link>
                 </li>
               </ul>
             </nav>

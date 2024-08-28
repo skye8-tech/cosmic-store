@@ -1,6 +1,6 @@
 import SectionTitle from "@components/SectionTitle";
 import CategoryItem from "@pages/Home/components/CategoryItem";
-import React from "react";
+import { useEffect } from "react";
 import { BsSmartwatch } from "react-icons/bs";
 import { CiDesktop } from "react-icons/ci";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -36,7 +36,32 @@ const categories = [
   },
 ];
 
+function getSomethingThatWillResolvetoAPromise() {
+  return new Promise((resolve, reject) => {
+    // resolve("Everthing went well");
+    reject("Something went wrong");
+  });
+}
+
 const Categories = () => {
+  // this returns a promise
+  //
+  // fetch("http://localhost:8000/v1/api/categories");
+
+  // then -> resolves
+  // catch -> rejects
+  // finally -> always runs
+
+  useEffect(() => {
+    getSomethingThatWillResolvetoAPromise()
+      .then((data) => {
+        console.log("Promise resolved", data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       {/* Categories */}

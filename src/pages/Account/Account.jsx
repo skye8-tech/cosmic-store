@@ -1,8 +1,21 @@
 import Button from "@components/Button";
-import React from "react";
-import { Link } from "react-router-dom";
+import { AppContext } from "@providers";
+import { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Account = () => {
+  const auth = useContext(AppContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (auth.isLoggedIn) {
+      console.log("User is logged in");
+    } else {
+      console.log("User is not logged in");
+      // redirect the user to home page
+      navigate("/");
+    }
+  }, []);
+
   return (
     <>
       <section className="px-4 my-16">
