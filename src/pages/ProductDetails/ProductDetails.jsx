@@ -1,9 +1,13 @@
+import { SubHeader } from "@components";
 import Button from "@components/Button";
 import ProductCard from "@components/ProductCard";
 import SectionTitle from "@components/SectionTitle";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const ProductDetails = () => {
+  const { pathname } = useLocation();
+  const paths = pathname.split("/").splice(1);
   const productImages = [
     { src: "/src/assets/images/image 57.png" },
     { src: "/src/assets/images/image 58.png" },
@@ -12,14 +16,17 @@ const ProductDetails = () => {
   ];
 
   const [selectedImg, setSelectedImg] = useState(productImages[0].src);
-
   return (
     <>
       <section className="px-4 my-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-xs sm:text-sm">
-            <span className="opacity-50">Account / Gaming / </span>Havic HV G-92
-            Gamepad
+            <SubHeader
+              parentPageHref="Account"
+              titleHref="Gaming"
+              subTitleHref="product name"
+              paths={paths}
+            />
           </div>
           <div className="my-7 sm:my-14 flex gap-8 max-md:flex-col">
             <div className="md:min-h-[600px] flex max-lg:flex-col gap-2 sm:gap-4 md:min-w-96 flex-1">

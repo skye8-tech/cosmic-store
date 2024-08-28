@@ -42,7 +42,7 @@ function LoginForm() {
         <p className="font-light text-center">
           Don't have an account?
           <span className="font-normal">
-            <Link to="/register">Sign UP </Link>
+            <a href="/register">Sign UP </a>
           </span>
         </p>
       </form>
