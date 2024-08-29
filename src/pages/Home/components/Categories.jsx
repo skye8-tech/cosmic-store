@@ -1,6 +1,6 @@
 import SectionTitle from "@components/SectionTitle";
 import CategoryItem from "@pages/Home/components/CategoryItem";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BsSmartwatch } from "react-icons/bs";
 import { CiDesktop } from "react-icons/ci";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -46,20 +46,64 @@ function getSomethingThatWillResolvetoAPromise() {
 const Categories = () => {
   // this returns a promise
   //
-  // fetch("http://localhost:8000/v1/api/categories");
+  // fetch("");
+
+  const endpoint = "http://localhost:8000/v1/api/categories";
+  const [data, setData] = useState();
+  /**
+   * [
+   *  {
+   *  name: "John",
+   * id: "123",
+   * }
+   * ]
+   */
 
   // then -> resolves
   // catch -> rejects
   // finally -> always runs
 
+  const values = {
+    isLoggedIn: true,
+    LogIn: () => {},
+    LogOut: () => {},
+  };
+
+  // a custom hook that returns the context.
+
+  // useEffect(() => {
+  //   getSomethingThatWillResolvetoAPromise()
+  //     .then((data) => {
+  //       console.log("Promise resolved", data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+
+  // 1. Promises
+  // 2. async/await
+  // var = data ?? ""
+
   useEffect(() => {
-    getSomethingThatWillResolvetoAPromise()
-      .then((data) => {
+    fetch(endpoint)
+      .then((res) => res.json())
+      .then((categories) => {
         console.log("Promise resolved", data);
+        setData(categories?.data);
       })
       .catch((err) => {
         console.log(err);
       });
+
+    async function fetchData() {
+      const response = await fetch(endpoint);
+      return await response.json();
+    }
+
+    // fetchData().then((categories) => {
+    //   setData(categories);
+    // });
   }, []);
 
   return (
@@ -83,9 +127,10 @@ const Categories = () => {
               </div>
             </div>
             <div className="flex gap-6 flex-wrap justify-center mb-14">
-              {categories.map((category, index) => (
-                <CategoryItem {...category} key={index} />
-              ))}
+              {data &&
+                data.map((category, index) => (
+                  <CategoryItem text={category.name} key={index} />
+                ))}
             </div>
           </>
           <hr />

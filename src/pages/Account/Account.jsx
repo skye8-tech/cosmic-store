@@ -1,13 +1,13 @@
 import Button from "@components/Button";
-import { AppContext } from "@providers";
-import { useContext, useEffect } from "react";
+import { useAuth } from "@hooks";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Account = () => {
-  const auth = useContext(AppContext);
+  const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
   useEffect(() => {
-    if (auth.isLoggedIn) {
+    if (isLoggedIn) {
       console.log("User is logged in");
     } else {
       console.log("User is not logged in");

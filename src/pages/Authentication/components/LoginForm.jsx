@@ -1,11 +1,45 @@
 import Button from "@components/Button";
-import { Link } from "react-router-dom";
+import { useAuth } from "@hooks";
+import { LocalStorage } from "@util";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
+const authEndpoint = "http://localhost:8000/v1/api/auth/login";
 function LoginForm() {
+  const auth = useAuth();
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    const data = {
+      email: name,
+      password: password,
+    };
+
+    // post this on the server via our api.
+    fetch(authEndpoint, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        // console.log(res);
+        LocalStorage.save("token", res.access_token);
+        auth.logIn();
+        navigate("/account");
+      });
+  };
+
   return (
     <>
       <form
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={onSubmit}
         className="flex flex-col gap-8 w-full p-8 lg:p-0"
       >
         <div className="flex flex-col gap-4">
@@ -14,12 +48,23 @@ function LoginForm() {
         </div>
         <div className="flex flex-col gap-4">
           <input
-            type="text "
-            placeholder="Email or Phone Number "
+            type="email "
+            placeholder="Email"
             className="p-2 text-sm border-b-2 border-gray-400 w-full"
+            value={name}
+            onChange={(event) => {
+              const value = event.target.value;
+              // console.log(value);
+              setName(value);
+            }}
           />
           <input
-            type="text"
+            value={password}
+            onChange={(event) => {
+              const value = event.target.value;
+              setPassword(value);
+            }}
+            type="password"
             placeholder="Password"
             className="p-2  border-b-2 text-sm border-gray-400 w-full"
           />
