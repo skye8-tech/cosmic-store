@@ -1,5 +1,74 @@
 import Button from "@components/Button";
+import {
+  BarChart,
+  LineChart,
+  areaElementClasses,
+  chartsGridClasses,
+} from "@mui/x-charts";
+import DashboardCard from "@pages/VendorPages/Dashboard/DashboardCard";
 import React from "react";
+
+const dataset = [
+  {
+    day: "Mon",
+    orders: 25,
+    deliveries: 18,
+  },
+  {
+    day: "Tue",
+    orders: 22,
+    deliveries: 16,
+  },
+  {
+    day: "Wed",
+    orders: 20,
+    deliveries: 15,
+  },
+  {
+    day: "Thu",
+    orders: 25,
+    deliveries: 20,
+  },
+  {
+    day: "Fri",
+    orders: 25,
+    deliveries: 22,
+  },
+  {
+    day: "Sat",
+    orders: 25,
+    deliveries: 20,
+  },
+];
+
+const data = [
+  {
+    day: "Sat",
+    income: 1,
+  },
+  {
+    day: "Sun",
+    income: 15,
+  },
+  {
+    day: "Mon",
+    income: 22,
+  },
+  {
+    day: "Tue",
+    income: 7,
+  },
+  {
+    day: "Wed",
+    income: 24,
+  },
+  {
+    day: "Thu",
+    income: 1,
+  },
+];
+
+const valueFormatter = (value) => value;
 
 const VendorDashboard = () => {
   return (
@@ -20,267 +89,448 @@ const VendorDashboard = () => {
               <path
                 d="M6 12H18"
                 stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M12 18V6"
                 stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           }
         />
       </div>
-      <>
-        <div className="flex gap-7 flex-wrap my-8">
-          <div className="flex-1 shadow-md border rounded-sm min-w-64 flex flex-col gap-8 p-10 pl-8">
-            <div className="flex gap-2 items-center">
-              <div className="bg-hoverButton w-14 h-14 rounded-full flex items-center justify-center text-text border-8 border-secondary2">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_3961_983)">
-                    <path
-                      d="M8 16H5.43C3.14 16 2 14.86 2 12.57V5.43C2 3.14 3.14 2 5.43 2H10C12.29 2 13.43 3.14 13.43 5.43"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M18.5701 22H14.0001C11.7101 22 10.5701 20.86 10.5701 18.57V11.43C10.5701 9.14 11.7101 8 14.0001 8H18.5701C20.8601 8 22.0001 9.14 22.0001 11.43V18.57C22.0001 20.86 20.8601 22 18.5701 22Z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M14.8701 15H18.1301"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M16.5 16.6301V13.3701"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_3961_983">
-                      <rect width="24" height="24" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <div className="text-primary1">
-                <h3 className="text-xl font-medium">Products</h3>
-                <h5 className="text-text1 text-xs">Last 7 days</h5>
-              </div>
-            </div>
-            <div>
-              <div className="flex gap-4 text-primary1 items-center">
-                <span className="text-2xl font-bold">12</span>
-                <span className="text-sm">products</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs">
-                <span className="flex text-button1 items-center gap-2">
+      <div className="flex gap-3 flex-wrap my-8">
+        <DashboardCard />
+        <DashboardCard />
+        <DashboardCard />
+      </div>
+      <div className="my-8 grid lg:grid-cols-2 gap-3">
+        <div className="pt-4 border shadow-lg">
+          <div className="flex items-center justify-between gap-4 md:gap-8 px-4 -mb-6">
+            <h3 className="text-primary1 font-semibold">Weekly Activity</h3>
+            <div className="text-text1 text-xs flex max-md:flex-wrap gap-x-4">
+              <div className="flex items-center gap-2">
+                <span className="text-[#A52A2A]">
                   <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M5.99998 0.950162C6.08887 0.950162 6.17221 0.96394 6.24998 0.991496C6.32776 1.01905 6.39998 1.06639 6.46665 1.1335L10.8667 5.5335C11 5.66683 11.0667 5.82505 11.0667 6.00816C11.0667 6.19127 11 6.34972 10.8667 6.4835C10.7333 6.61683 10.5778 6.6835 10.4 6.6835C10.2222 6.6835 10.0667 6.61683 9.93332 6.4835L6.66665 3.21683L6.66665 10.6835C6.66665 10.8724 6.60265 11.0279 6.47465 11.1502C6.34665 11.2724 6.18843 11.3335 5.99998 11.3335C5.81109 11.3335 5.65265 11.2695 5.52465 11.1415C5.39665 11.0135 5.33287 10.8553 5.33332 10.6668L5.33332 3.21683L2.06665 6.4835C1.93332 6.61683 1.77776 6.6835 1.59998 6.6835C1.42221 6.6835 1.26665 6.61683 1.13332 6.4835C0.999984 6.35016 0.933317 6.19172 0.933317 6.00816C0.933317 5.82461 0.999984 5.66638 1.13332 5.5335L5.53332 1.1335C5.59999 1.06683 5.67221 1.0195 5.74998 0.991496C5.82776 0.963496 5.9111 0.949718 5.99998 0.950162Z"
-                      fill="currentColor"
-                    />
+                    <circle cx="4" cy="4" r="4" fill="currentColor" />
                   </svg>
-                  6%
                 </span>
-                <span className="text-text1">vs last 7 days</span>
+                <span>Orders</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[#FFA500]">
+                  <svg
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="4" cy="4" r="4" fill="currentColor" />
+                  </svg>
+                </span>
+                <span>Deleveries</span>
               </div>
             </div>
+            <div>
+              <select
+                name="timeFrame"
+                defaultValue="weekly"
+                className="focus:outline-none border border-text1 text-text1 p-1 cursor-pointer rounded-md text-xs"
+              >
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
           </div>
-
-          <div className="flex-1 shadow-md border rounded-sm min-w-64 flex flex-col gap-8 p-10 pl-8">
-            <div className="flex gap-2 items-center">
-              <div className="bg-hoverButton w-14 h-14 rounded-full flex items-center justify-center text-text border-8 border-secondary2">
+          <BarChart
+            dataset={dataset}
+            xAxis={[
+              {
+                scaleType: "band",
+                dataKey: "day",
+                barGapRatio: 1,
+                categoryGapRatio: 0.4,
+                tickLabelPlacement: "middle",
+                disableLine: true,
+                disableTicks: true,
+              },
+            ]}
+            series={[
+              {
+                dataKey: "orders",
+                valueFormatter,
+                color: "#A52A2A",
+              },
+              {
+                dataKey: "deliveries",
+                valueFormatter,
+                color: "#FFA500",
+              },
+            ]}
+            grid={{ horizontal: true }}
+            borderRadius={17}
+            yAxis={[
+              {
+                label: "products",
+                disableLine: true,
+                disableTicks: true,
+              },
+            ]}
+            height={300}
+            sx={{
+              [`& .${chartsGridClasses.line}`]: {
+                strokeWidth: 0.5,
+              },
+            }}
+          />
+        </div>
+        <div className="pt-4 border shadow-lg">
+          <div className="flex items-center justify-between gap-4 md:gap-8 px-4 -mb-6">
+            <h3 className="text-primary1 font-semibold">Weekly Activity</h3>
+            <div>
+              <select
+                name="timeFrame"
+                defaultValue="weekly"
+                className="focus:outline-none border border-text1 text-text1 p-1 cursor-pointer rounded-md text-xs"
+              >
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
+          </div>
+          <LineChart
+            xAxis={[
+              {
+                dataKey: "day",
+                valueFormatter: (value) => value,
+                scaleType: "band",
+                disableLine: true,
+                disableTicks: true,
+                tickPlacement: "start",
+                tickLabelPlacement: "middle",
+              },
+            ]}
+            yAxis={[{ disableLine: true, disableTicks: true, label: "income" }]}
+            series={[
+              {
+                dataKey: "income",
+                color: "#DB4444",
+                showMark: false,
+                area: true,
+              },
+            ]}
+            dataset={data}
+            height={300}
+            grid={{ horizontal: true }}
+            sx={{
+              [`.${areaElementClasses.root}`]: {
+                fill: "url(#swich-color-id)",
+              },
+              [`& .${chartsGridClasses.line}`]: {
+                strokeWidth: 0.5,
+              },
+            }}
+          >
+            <ColorPalette id="swich-color-id" />
+          </LineChart>
+        </div>
+      </div>
+      <>
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 text-primary1 my-8">
+          {/* Best selling products */}
+          <div className="col-start-1 lg:col-span-2 border shadow-md rounded-sm h-fit">
+            <div className="w-full p-6 pb-0 flex gap-4 justify-between items-center">
+              <h3 className="font-semibold">Best Selling Products</h3>
+              <span>
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M3.97738 9.84C4.0176 9.33881 4.24513 8.87115 4.61465 8.53017C4.98417 8.18918 5.46857 7.9999 5.97138 8H18.0294C18.5322 7.9999 19.0166 8.18918 19.3861 8.53017C19.7556 8.87115 19.9832 9.33881 20.0234 9.84L20.8264 19.84C20.8485 20.1152 20.8133 20.392 20.7232 20.6529C20.6331 20.9139 20.4899 21.1533 20.3027 21.3562C20.1155 21.5592 19.8883 21.7211 19.6354 21.8319C19.3825 21.9427 19.1095 21.9999 18.8334 22H5.16738C4.8913 21.9999 4.61823 21.9427 4.36536 21.8319C4.11249 21.7211 3.88529 21.5592 3.69808 21.3562C3.51086 21.1533 3.36768 20.9139 3.27755 20.6529C3.18742 20.392 3.15229 20.1152 3.17438 19.84L3.97738 9.84V9.84Z"
+                  <circle
+                    cx="10.9999"
+                    cy="11.0002"
+                    r="0.916667"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                  <path
-                    d="M16 11V6C16 4.93913 15.5786 3.92172 14.8284 3.17157C14.0783 2.42143 13.0609 2 12 2C10.9391 2 9.92172 2.42143 9.17157 3.17157C8.42143 3.92172 8 4.93913 8 6V11"
+                  <circle
+                    cx="10.9999"
+                    cy="17.4167"
+                    r="0.916667"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <ellipse
+                    cx="10.9999"
+                    cy="4.58317"
+                    rx="0.916667"
+                    ry="0.916667"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-              </div>
-              <div className="text-primary1">
-                <h3 className="text-xl font-medium">Products</h3>
-                <h5 className="text-text1 text-xs">Last 7 days</h5>
-              </div>
+              </span>
             </div>
-            <div className="flex gap-x-12 gap-y-4 flex-wrap">
-              <div>
-                <div className="flex gap-4 text-primary1 items-center">
-                  <span className="text-2xl font-bold">12</span>
-                  <span className="text-sm">products</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="flex text-button1 items-center gap-2">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.99998 0.950162C6.08887 0.950162 6.17221 0.96394 6.24998 0.991496C6.32776 1.01905 6.39998 1.06639 6.46665 1.1335L10.8667 5.5335C11 5.66683 11.0667 5.82505 11.0667 6.00816C11.0667 6.19127 11 6.34972 10.8667 6.4835C10.7333 6.61683 10.5778 6.6835 10.4 6.6835C10.2222 6.6835 10.0667 6.61683 9.93332 6.4835L6.66665 3.21683L6.66665 10.6835C6.66665 10.8724 6.60265 11.0279 6.47465 11.1502C6.34665 11.2724 6.18843 11.3335 5.99998 11.3335C5.81109 11.3335 5.65265 11.2695 5.52465 11.1415C5.39665 11.0135 5.33287 10.8553 5.33332 10.6668L5.33332 3.21683L2.06665 6.4835C1.93332 6.61683 1.77776 6.6835 1.59998 6.6835C1.42221 6.6835 1.26665 6.61683 1.13332 6.4835C0.999984 6.35016 0.933317 6.19172 0.933317 6.00816C0.933317 5.82461 0.999984 5.66638 1.13332 5.5335L5.53332 1.1335C5.59999 1.06683 5.67221 1.0195 5.74998 0.991496C5.82776 0.963496 5.9111 0.949718 5.99998 0.950162Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    6%
-                  </span>
-                  <span className="text-text1">vs last 7 days</span>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex gap-4 text-primary1 items-center">
-                  <span className="text-2xl font-bold">01</span>
-                  <span className="text-sm">Cancellation</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="flex text-secondary2 items-center gap-2">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="rotate-180"
-                    >
-                      <path
-                        d="M5.99998 0.950162C6.08887 0.950162 6.17221 0.96394 6.24998 0.991496C6.32776 1.01905 6.39998 1.06639 6.46665 1.1335L10.8667 5.5335C11 5.66683 11.0667 5.82505 11.0667 6.00816C11.0667 6.19127 11 6.34972 10.8667 6.4835C10.7333 6.61683 10.5778 6.6835 10.4 6.6835C10.2222 6.6835 10.0667 6.61683 9.93332 6.4835L6.66665 3.21683L6.66665 10.6835C6.66665 10.8724 6.60265 11.0279 6.47465 11.1502C6.34665 11.2724 6.18843 11.3335 5.99998 11.3335C5.81109 11.3335 5.65265 11.2695 5.52465 11.1415C5.39665 11.0135 5.33287 10.8553 5.33332 10.6668L5.33332 3.21683L2.06665 6.4835C1.93332 6.61683 1.77776 6.6835 1.59998 6.6835C1.42221 6.6835 1.26665 6.61683 1.13332 6.4835C0.999984 6.35016 0.933317 6.19172 0.933317 6.00816C0.933317 5.82461 0.999984 5.66638 1.13332 5.5335L5.53332 1.1335C5.59999 1.06683 5.67221 1.0195 5.74998 0.991496C5.82776 0.963496 5.9111 0.949718 5.99998 0.950162Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    6%
-                  </span>
-                  <span className="text-text1">vs last 7 days</span>
-                </div>
-              </div>
+            <div className="py-6 overflow-x-auto">
+              <table className="w-full bg-white">
+                <thead className="bg-[#F8F9FA]">
+                  <tr>
+                    <th className="text-left py-5 px-5 text-xs font-semibold whitespace-nowrap">
+                      Product
+                    </th>
+                    <th className="text-left py-5 px-5 text-xs font-semibold whitespace-nowrap">
+                      Total Order
+                    </th>
+                    <th className="text-left py-5 px-5 text-xs font-semibold whitespace-nowrap">
+                      Status
+                    </th>
+                    <th className="text-left py-5 px-5 text-xs font-semibold whitespace-nowrap">
+                      Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="hover:bg-gray-200/20 hover:cursor-pointer transition-colors">
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap flex items-center gap-2">
+                      <span className="w-11 block h-11 p-1">
+                        <img src="src/assets/images/game.png" alt="" />
+                      </span>
+                      <h3 className="font-semibold">Apple iphone 13</h3>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      506
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap text-button1">
+                      <div className=" flex gap-2 items-center">
+                        <span>
+                          <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="4" cy="4" r="4" fill="currentColor" />
+                          </svg>
+                        </span>
+                        <span>Stock</span>
+                      </div>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      $999.29
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-200/20 hover:cursor-pointer transition-colors">
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap flex items-center gap-2">
+                      <span className="w-11 block h-11 p-1">
+                        <img src="src/assets/images/game.png" alt="" />
+                      </span>
+                      <h3 className="font-semibold">Apple iphone 13</h3>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      506
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap text-button1">
+                      <div className=" flex gap-2 items-center">
+                        <span>
+                          <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="4" cy="4" r="4" fill="currentColor" />
+                          </svg>
+                        </span>
+                        <span>Stock</span>
+                      </div>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      $999.29
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-200/20 hover:cursor-pointer transition-colors">
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap flex items-center gap-2">
+                      <span className="w-11 block h-11 p-1">
+                        <img src="src/assets/images/game.png" alt="" />
+                      </span>
+                      <h3 className="font-semibold">Apple iphone 13</h3>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      506
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap text-button1">
+                      <div className=" flex gap-2 items-center">
+                        <span>
+                          <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="4" cy="4" r="4" fill="currentColor" />
+                          </svg>
+                        </span>
+                        <span>Stock</span>
+                      </div>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      $999.29
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-gray-200/20 hover:cursor-pointer transition-colors">
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap flex items-center gap-2">
+                      <span className="w-11 block h-11 p-1">
+                        <img src="src/assets/images/game.png" alt="" />
+                      </span>
+                      <h3 className="font-semibold">Apple iphone 13</h3>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      506
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap text-secondary2">
+                      <div className=" flex gap-2 items-center">
+                        <span>
+                          <svg
+                            width="8"
+                            height="8"
+                            viewBox="0 0 8 8"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="4" cy="4" r="4" fill="currentColor" />
+                          </svg>
+                        </span>
+                        <span>Out</span>
+                      </div>
+                    </td>
+                    <td className="text-left py-2 px-4 text-xs whitespace-nowrap">
+                      $999.29
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
-          <div className="flex-1 shadow-md border rounded-sm min-w-64 flex flex-col gap-8 p-10 pl-8">
-            <div className="flex gap-2 items-center">
-              <div className="bg-hoverButton w-14 h-14 rounded-full flex items-center justify-center text-text border-8 border-secondary2">
+          {/* Trending products */}
+          <div className="border shadow-md rounded-sm">
+            <div className="w-full p-6 pb-0 flex gap-4 justify-between items-center">
+              <div>
+                <h3 className="font-semibold">Best Selling Products</h3>
+                <h4 className="text-text1">Total 10.4k Visitors</h4>
+              </div>
+              <span>
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 22 22"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M3.97738 9.84C4.0176 9.33881 4.24513 8.87115 4.61465 8.53017C4.98417 8.18918 5.46857 7.9999 5.97138 8H18.0294C18.5322 7.9999 19.0166 8.18918 19.3861 8.53017C19.7556 8.87115 19.9832 9.33881 20.0234 9.84L20.8264 19.84C20.8485 20.1152 20.8133 20.392 20.7232 20.6529C20.6331 20.9139 20.4899 21.1533 20.3027 21.3562C20.1155 21.5592 19.8883 21.7211 19.6354 21.8319C19.3825 21.9427 19.1095 21.9999 18.8334 22H5.16738C4.8913 21.9999 4.61823 21.9427 4.36536 21.8319C4.11249 21.7211 3.88529 21.5592 3.69808 21.3562C3.51086 21.1533 3.36768 20.9139 3.27755 20.6529C3.18742 20.392 3.15229 20.1152 3.17438 19.84L3.97738 9.84V9.84Z"
+                  <circle
+                    cx="10.9999"
+                    cy="11.0002"
+                    r="0.916667"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
-                  <path
-                    d="M16 11V6C16 4.93913 15.5786 3.92172 14.8284 3.17157C14.0783 2.42143 13.0609 2 12 2C10.9391 2 9.92172 2.42143 9.17157 3.17157C8.42143 3.92172 8 4.93913 8 6V11"
+                  <circle
+                    cx="10.9999"
+                    cy="17.4167"
+                    r="0.916667"
                     stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <ellipse
+                    cx="10.9999"
+                    cy="4.58317"
+                    rx="0.916667"
+                    ry="0.916667"
+                    stroke="currentColor"
+                    strokeWidth="1.75"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-              </div>
-              <div className="text-primary1">
-                <h3 className="text-xl font-medium">Products</h3>
-                <h5 className="text-text1 text-xs">Last 7 days</h5>
-              </div>
+              </span>
             </div>
-            <div className="flex gap-x-12 gap-y-4 flex-wrap">
-              <div>
-                <div className="flex gap-4 text-primary1 items-center">
-                  <span className="text-2xl font-bold">12</span>
-                  <span className="text-sm">products</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="flex text-button1 items-center gap-2">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.99998 0.950162C6.08887 0.950162 6.17221 0.96394 6.24998 0.991496C6.32776 1.01905 6.39998 1.06639 6.46665 1.1335L10.8667 5.5335C11 5.66683 11.0667 5.82505 11.0667 6.00816C11.0667 6.19127 11 6.34972 10.8667 6.4835C10.7333 6.61683 10.5778 6.6835 10.4 6.6835C10.2222 6.6835 10.0667 6.61683 9.93332 6.4835L6.66665 3.21683L6.66665 10.6835C6.66665 10.8724 6.60265 11.0279 6.47465 11.1502C6.34665 11.2724 6.18843 11.3335 5.99998 11.3335C5.81109 11.3335 5.65265 11.2695 5.52465 11.1415C5.39665 11.0135 5.33287 10.8553 5.33332 10.6668L5.33332 3.21683L2.06665 6.4835C1.93332 6.61683 1.77776 6.6835 1.59998 6.6835C1.42221 6.6835 1.26665 6.61683 1.13332 6.4835C0.999984 6.35016 0.933317 6.19172 0.933317 6.00816C0.933317 5.82461 0.999984 5.66638 1.13332 5.5335L5.53332 1.1335C5.59999 1.06683 5.67221 1.0195 5.74998 0.991496C5.82776 0.963496 5.9111 0.949718 5.99998 0.950162Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    6%
-                  </span>
-                  <span className="text-text1">vs last 7 days</span>
-                </div>
+            <div className="pt-4 px-6 gap-4 flex flex-col text-xs">
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
               </div>
-
-              <div>
-                <div className="flex gap-4 text-primary1 items-center">
-                  <span className="text-2xl font-bold">01</span>
-                  <span className="text-sm">Cancellation</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs">
-                  <span className="flex text-secondary2 items-center gap-2">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="rotate-180"
-                    >
-                      <path
-                        d="M5.99998 0.950162C6.08887 0.950162 6.17221 0.96394 6.24998 0.991496C6.32776 1.01905 6.39998 1.06639 6.46665 1.1335L10.8667 5.5335C11 5.66683 11.0667 5.82505 11.0667 6.00816C11.0667 6.19127 11 6.34972 10.8667 6.4835C10.7333 6.61683 10.5778 6.6835 10.4 6.6835C10.2222 6.6835 10.0667 6.61683 9.93332 6.4835L6.66665 3.21683L6.66665 10.6835C6.66665 10.8724 6.60265 11.0279 6.47465 11.1502C6.34665 11.2724 6.18843 11.3335 5.99998 11.3335C5.81109 11.3335 5.65265 11.2695 5.52465 11.1415C5.39665 11.0135 5.33287 10.8553 5.33332 10.6668L5.33332 3.21683L2.06665 6.4835C1.93332 6.61683 1.77776 6.6835 1.59998 6.6835C1.42221 6.6835 1.26665 6.61683 1.13332 6.4835C0.999984 6.35016 0.933317 6.19172 0.933317 6.00816C0.933317 5.82461 0.999984 5.66638 1.13332 5.5335L5.53332 1.1335C5.59999 1.06683 5.67221 1.0195 5.74998 0.991496C5.82776 0.963496 5.9111 0.949718 5.99998 0.950162Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    6%
-                  </span>
-                  <span className="text-text1">vs last 7 days</span>
-                </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
+              </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
+              </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
+              </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
+              </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
+              </div>
+              <div className="gap-4 flex items-center">
+                <span className="w-11 block h-11 p-1">
+                  <img src="src/assets/images/game.png" alt="" />
+                </span>
+                <h3 className="font-semibold flex-1">Apple iphone 13</h3>
+                <span>$999.29</span>
               </div>
             </div>
           </div>
@@ -291,3 +541,15 @@ const VendorDashboard = () => {
 };
 
 export default VendorDashboard;
+
+function ColorPalette({ id }) {
+  return (
+    <defs>
+      <linearGradient id={id} gradientTransform="rotate(90)">
+        <stop stopColor={"#DB44445E"} stopOpacity={1} offset="0%" />
+        <stop stopColor={"#FFFFFF"} stopOpacity={1} offset="100%" />
+      </linearGradient>
+    </defs>
+  );
+}
+// background: linear-gradient(180deg, rgba(219, 68, 68, 0.37) 0%, #FFFFFF 100%);

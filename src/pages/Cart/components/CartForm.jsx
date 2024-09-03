@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react";
 import lcd from "@assets/images/ldcmonitor.png";
 import game from "@assets/images/game.png";
-import Button from '@components/Button';
-
+import Button from "@components/Button";
 
 function CartForm() {
   return (
@@ -33,9 +32,9 @@ function CartForm() {
                     <path
                       d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
                       stroke="white"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   </svg>
                 </div>
@@ -99,7 +98,7 @@ function CartForm() {
             </div>
             <div className="w-full lg:w-1/2 flex flex-col p-6 border border-gray-800 rounded-lg ">
               <div>
-                <p className='font-bold'>Cart Total</p>
+                <p className="font-bold">Cart Total</p>
                 <div className="flex flex-row text-sm justify-between py-3 border-b-2 border-gray-300">
                   <p>Subtotal</p>
                   <p>$1750</p>
@@ -129,4 +128,4 @@ function CartForm() {
   );
 }
 
-export default CartForm
+export default CartForm;
