@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 function SubHeader(props) {
   const { parentPageHref, titleHref, subTitleHref, paths } = props;
@@ -28,19 +27,19 @@ function SubHeader(props) {
           <span>/</span>
           <span>{subTitleHref}</span>
         </div>
-        <Link to={""}>Account</Link>
-        <span> / </span>
-        {paths.map((path) => (
-          <>
-            {/* <Link to={`/${path}`}>{path}</Link> */}
-            {paths[paths.length - 1] == path ? (
+        {/* <Link to={""}>Account</Link>
+        <span> / </span> */}
+        {/* {paths.map((path) => ( */}
+        {/* <> */}
+        {/* <Link to={`/${path}`}>{path}</Link> */}
+        {/* {paths[paths.length - 1] == path ? (
               <Link to={`${path}`}>{path}</Link>
             ) : (
               <Link to={`/${path}`}>{path}</Link>
             )}
             {paths[paths.length - 1] == path ? <></> : <span> / </span>}
-          </>
-        ))}
+          </> */}
+        {/* ))} */}
       </section>
     </>
   );
