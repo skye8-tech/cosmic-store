@@ -9,6 +9,8 @@ import Cart from "@pages/Cart/Cart";
 import { createBrowserRouter } from "react-router-dom";
 
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
+import VendorDashboard from "@pages/VendorPages/Dashboard/VendorDashboard";
+import VendorLayout from "@layouts/VendorLayout";
 
 const children = [
   { element: <Home />, path: "/" },
@@ -18,6 +20,7 @@ const children = [
   { element: <About />, path: "/about" },
   { element: <Cart />, path: "/cart" },
   { element: <Account />, path: "/account" },
+  { element: <VendorDashboard />, path: "/dashboard" },
 ];
 
 export const router = createBrowserRouter([
@@ -30,5 +33,18 @@ export const router = createBrowserRouter([
       </a>
     ),
     children,
+  },
+  {
+    element: <VendorLayout />,
+    path: "vendor",
+    errorElement: (
+      <a href="/" className="text-center">
+        This page does not exist
+      </a>
+    ),
+    children: [
+      { element: <VendorDashboard />, index: true },
+      { element: <h1>To be done</h1>, path: "*" },
+    ],
   },
 ]);
