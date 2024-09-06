@@ -2,18 +2,42 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@*": ["*"],
-      "@app/*": ["app/*"],
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@features/*": ["features/*"],
-      "@hooks/*": ["hooks/*"],
-      "@pages/*": ["pages/*"],
-      "@providers/*": ["providers/*"],
-      "@router/*": ["router/*"],
-      "@util/*": ["util/*"],
-      "@lib": ["lib/*"],
-      "@layouts": ["layouts/*"]
+      "@*": [
+        "*"
+      ],
+      "@app/*": [
+        "app/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@features/*": [
+        "features/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@providers/*": [
+        "providers/*"
+      ],
+      "@router/*": [
+        "router/*"
+      ],
+      "@util/*": [
+        "util/*"
+      ],
+      "@lib": [
+        "lib/*"
+      ],
+      "@layouts": [
+        "layouts/*"
+      ]
     }
   }
 }
