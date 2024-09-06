@@ -6,4 +6,8 @@
   hr {
     @apply border-t border-black/15;
   }
+
+  #vendor-sidebar .active {
+    @apply bg-secondary2 text-white;
+  }
 }

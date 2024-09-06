@@ -1,7 +1,7 @@
 import React from "react";
 
 function Statistics(props) {
-    const {sallersNo,monthlySale,customerNo,annaulSale}=props
+  const { sallersNo, monthlySale, customerNo, annaulSale } = props;
   return (
     <>
       <section className="max-w-6xl mx-auto text-center flex  flex-col md:flex-row items-center  my-8 mb-16  px-4 gap-6">
@@ -19,32 +19,32 @@ function Statistics(props) {
                 <path
                   d="M34.6416 5H27.9883L28.8216 13.3333C28.8216 13.3333 30.4883 15 32.9883 15C34.3006 15.0017 35.5684 14.524 36.5533 13.6567C36.6574 13.5594 36.735 13.4372 36.7787 13.3016C36.8224 13.166 36.8309 13.0214 36.8033 12.8817L35.6266 5.83333C35.5873 5.60049 35.4668 5.38909 35.2865 5.23656C35.1062 5.08404 34.8778 5.00024 34.6416 5V5Z"
                   stroke="white"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M27.9883 5L28.8216 13.3333C28.8216 13.3333 27.1549 15 24.6549 15C22.1549 15 20.4883 13.3333 20.4883 13.3333V5H27.9883Z"
                   stroke="#FAFAFA"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M20.4886 5V13.3333C20.4886 13.3333 18.8219 15 16.3219 15C13.8219 15 12.1553 13.3333 12.1553 13.3333L12.9886 5H20.4886Z"
                   stroke="#FAFAFA"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M12.9883 5H6.3366C6.09993 4.99991 5.87089 5.08377 5.69023 5.23666C5.50957 5.38955 5.38899 5.60157 5.34994 5.835L4.17494 12.8833C4.14747 13.0231 4.15601 13.1676 4.19974 13.3032C4.24348 13.4387 4.32097 13.5609 4.42494 13.6583C4.9716 14.1417 6.19327 15.0017 7.98827 15.0017C10.4883 15.0017 12.1549 13.335 12.1549 13.335L12.9883 5.00167V5Z"
                   stroke="#FAFAFA"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M5.5 15V31.6667C5.5 32.5507 5.85119 33.3986 6.47631 34.0237C7.10143 34.6488 7.94928 35 8.83333 35H32.1667C33.0507 35 33.8986 34.6488 34.5237 34.0237C35.1488 33.3986 35.5 32.5507 35.5 31.6667V15"
                   stroke="#FAFAFA"
-                  stroke-width="2"
+                  strokeWidth="2"
                 />
                 <path
                   d="M25.2217 35V25C25.2217 24.1159 24.8705 23.2681 24.2454 22.6429C23.6202 22.0178 22.7724 21.6666 21.8883 21.6666H18.555C17.671 21.6666 16.8231 22.0178 16.198 22.6429C15.5729 23.2681 15.2217 24.1159 15.2217 25V35"
                   stroke="#FAFAFA"
-                  stroke-width="2"
+                  strokeWidth="2"
                   stroke-miterlimit="16"
                 />
               </svg>
@@ -67,23 +67,23 @@ function Statistics(props) {
                 <path
                   d="M20.0003 37.2728C29.5397 37.2728 37.273 29.5395 37.273 20C37.273 10.4606 29.5397 2.72729 20.0003 2.72729C10.4608 2.72729 2.72754 10.4606 2.72754 20C2.72754 29.5395 10.4608 37.2728 20.0003 37.2728Z"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M25.0914 14.547C24.762 13.9758 24.2834 13.505 23.707 13.1848C23.1305 12.8646 22.4777 12.7072 21.8186 12.7294H18.1823C17.2178 12.7294 16.2929 13.1124 15.611 13.7941C14.929 14.4759 14.5459 15.4005 14.5459 16.3647C14.5459 17.3288 14.929 18.2535 15.611 18.9353C16.2929 19.617 17.2178 20 18.1823 20H21.8186C22.783 20 23.708 20.383 24.3899 21.0648C25.0719 21.7465 25.455 22.6712 25.455 23.6354C25.455 24.5995 25.0719 25.5242 24.3899 26.2059C23.708 26.8877 22.783 27.2707 21.8186 27.2707H18.1823C17.5232 27.2929 16.8704 27.1354 16.2939 26.8153C15.7174 26.4951 15.2389 26.0242 14.9095 25.453"
                   stroke="black"
-                  stroke-width="2.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M20 8.18176V12.1212M20 27.8787V31.8181"
                   stroke="black"
-                  stroke-width="2.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2.75"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
