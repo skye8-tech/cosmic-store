@@ -22,13 +22,23 @@ const Order = ({ sn, name, numberOfItems, amount, created, status }) => {
         <select
           name="status"
           value={orderStatus}
-          className="p-2 py-1 bg-secondary2/25 text-secondary2 text-center cursor-pointer outline-none"
+          className={`p-2 py-1 text-center cursor-pointer outline-none capitalize font-medium ${
+            orderStatus == "pending"
+              ? "bg-[#f1a636]/25 text-[#f1a636]"
+              : orderStatus == "shipped"
+              ? "bg-[#FFA500]/25 text-[#FFA500]"
+              : orderStatus == "delivered"
+              ? "bg-button1/25 text-button1"
+              : orderStatus == "canceled"
+              ? "bg-secondary2/25 text-secondary2"
+              : ""
+          }`}
           onChange={(e) => {
             setOrderStatus(e.target.value);
           }}
         >
           {statusOptions.map((item, index) => (
-            <option value={item} key={index}>
+            <option className="bg-white text-primary1" value={item} key={index}>
               {item}
             </option>
           ))}
