@@ -8,7 +8,6 @@ import {
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
-
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
@@ -50,17 +49,17 @@ const Header = () => {
           >
             <ul className="text-center space-y-1">
               <li className="whitespace-nowrap">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/contact">Contact</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/about">About</Link>
-                </li>
-                <li className="whitespace-nowrap">
-                  <Link to="/register">Sign Up</Link>
-                </li>
+                <Link to="/">Home</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="whitespace-nowrap">
+                <Link to="/register">Sign Up</Link>
+              </li>
             </ul>
             <hr />
           </nav>
@@ -76,7 +75,9 @@ const Header = () => {
             </div>
             <div className="text-xl flex items-center md:gap-2 lg:gap-4">
               <IoIosHeartEmpty />
-              <IoCartOutline />
+              <a href="/cart">
+                <IoCartOutline />
+              </a>
             </div>
           </div>
         </div>
