@@ -11,6 +11,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
 import VendorDashboard from "@pages/VendorPages/Dashboard/VendorDashboard";
 import VendorLayout from "@layouts/VendorLayout";
+import VendorPayment from "@pages/VendorPages/VendorPayments/VendorPayment";
 
 const children = [
   { element: <Home />, path: "/" },
@@ -44,6 +45,8 @@ export const router = createBrowserRouter([
     ),
     children: [
       { element: <VendorDashboard />, index: true },
+      { element: <VendorPayment />, path: "payments" },
+
       { element: <h1>To be done</h1>, path: "*" },
     ],
   },
