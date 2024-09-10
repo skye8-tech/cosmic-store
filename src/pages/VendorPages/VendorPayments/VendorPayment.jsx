@@ -2,12 +2,13 @@ import VendorPageHeader from '@pages/VendorPages/components/VendorPageHeader'
 import PaymentMethodCard from '@pages/VendorPages/VendorPayments/components/PaymentMethodCard';
 import VendorLineChart from '@pages/VendorPages/VendorPayments/components/VendorLineChart';
 import React from 'react'
+import QuickStats from './components/QuickStats';
 
 function VendorPayment() {
 
   return (
     <>
-      <section className="mr-4 max-w-6xl mx-auto">
+      <section className="mr-4 max-w-6xl mx-auto flex flex-col gap-6">
         <VendorPageHeader
           title="Payments"
           buttonText="Add Product"
@@ -37,8 +38,9 @@ function VendorPayment() {
           }
         ></VendorPageHeader>
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className='w-full lg:w-1/2'>
+          <div className='w-full lg:w-1/2 flex flex-col  gap-4' >
             {/* stats card  */}
+            <QuickStats></QuickStats>
             <div className='shadow-lg'>
              <VendorLineChart></VendorLineChart>
             </div>
