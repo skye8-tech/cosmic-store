@@ -12,9 +12,9 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <header className="px-4">
-        <div className="max-w-6xl mx-auto flex items-center justify-between mt-8 gap-6 relative">
-          <div className="max-w-2xl flex items-center justify-between flex-1">
+      <header className="px-4 w-screen">
+        <div className=" mx-auto flex items-center justify-between mt-8 gap-6 relative">
+          <div className=" flex items-center justify-between flex-1">
             <div className="text-2xl font-bold tracking-wide">Exclusive</div>
             {/* Desktop View */}
             <nav className="hidden md:block">

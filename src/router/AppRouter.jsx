@@ -4,10 +4,8 @@ import About from "@pages/About/About";
 import Account from "@pages/Account/Account";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
-
 import Cart from "@pages/Cart/Cart";
 import { createBrowserRouter } from "react-router-dom";
-
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
 import VendorDashboard from "@pages/VendorPages/Dashboard/VendorDashboard";
 import VendorLayout from "@layouts/VendorLayout";
@@ -17,8 +15,9 @@ const children = [
   { element: <Home />, path: "/" },
   { element: <Register />, path: "/register" },
   { element: <Login />, path: "/login" },
-  { element: <ProductDetails />, path: "/product/:id" },
+  { element: <Contact />, path: "/contact" },
   { element: <About />, path: "/about" },
+  { element: <ProductDetails />, path: "/product/:id" },
   { element: <Cart />, path: "/cart" },
   { element: <Account />, path: "/account" },
   { element: <VendorDashboard />, path: "/dashboard" },
