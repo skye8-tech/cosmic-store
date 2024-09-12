@@ -4,10 +4,9 @@ import About from "@pages/About/About";
 import Account from "@pages/Account/Account";
 import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
-
-import Cart from "@pages/Cart/Cart";
+import Checkout from "@pages/checkout/Checkout";
 import { createBrowserRouter } from "react-router-dom";
-
+import Cart from "@pages/Cart/Cart";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
 import VendorDashboard from "@pages/VendorPages/Dashboard/VendorDashboard";
 import VendorLayout from "@layouts/VendorLayout";
@@ -22,6 +21,7 @@ const children = [
   { element: <Cart />, path: "/cart" },
   { element: <Account />, path: "/account" },
   { element: <VendorDashboard />, path: "/dashboard" },
+  { element: <Checkout />, path: "/checkout" },
 ];
 
 export const router = createBrowserRouter([
