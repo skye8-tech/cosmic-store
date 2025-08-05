@@ -1,5 +1,3 @@
-import React from "react";
-
 const DashboardCard = ({ icon, title, subtitle, details }) => {
   return (
     <>
@@ -15,7 +13,7 @@ const DashboardCard = ({ icon, title, subtitle, details }) => {
         </div>
         <div className="flex gap-x-4 gap-y-4 flex-wrap">
           {details.map((item) => (
-            <div>
+            <div key={item.title}>
               <div className="flex gap-3 text-primary1 items-center">
                 <span className="text-2xl font-bold">
                   {item.number / 10 >= 1 ? item.number : "0" + item.number}

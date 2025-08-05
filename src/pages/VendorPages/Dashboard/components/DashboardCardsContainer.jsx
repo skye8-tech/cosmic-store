@@ -1,5 +1,4 @@
 import DashboardCard from "@pages/VendorPages/Dashboard/components/DashboardCard";
-import React from "react";
 
 const dashboardCards = [
   {
@@ -183,6 +182,7 @@ const DashboardCardsContainer = () => {
     <div className="flex gap-3 flex-wrap my-8">
       {dashboardCards.map((card) => (
         <DashboardCard
+          key={card.title}
           icon={card.icon}
           title={card.title}
           subtitle={card.subtitle}
