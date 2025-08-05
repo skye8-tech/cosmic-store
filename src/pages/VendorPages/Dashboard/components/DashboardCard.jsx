@@ -3,7 +3,7 @@ const DashboardCard = ({ icon, title, subtitle, details }) => {
     <>
       <div className="flex-1 shadow-md border rounded-sm min-w-64 flex flex-col gap-8 p-8">
         <div className="flex gap-2 items-center">
-          <div className="bg-hoverButton w-14 h-14 rounded-full flex items-center justify-center text-text border-8 border-secondary2">
+          <div className="bg-secondary2 w-14 h-14 rounded-full flex items-center justify-center text-text border-8 border-secondary2">
             {icon}
           </div>
           <div className="text-primary1">
