@@ -6,9 +6,9 @@ import {
   chartsGridClasses,
 } from "@mui/x-charts";
 import BestSellingProductsContainer from "@pages/VendorPages/Dashboard/components/BestSellingProductsContainer";
-import TrendingProductsContainer from "@pages/VendorPages/Dashboard/components/TrendingProductsContainer";
-import React from "react";
 import DashboardCardsContainer from "@pages/VendorPages/Dashboard/components/DashboardCardsContainer";
+import TrendingProductsContainer from "@pages/VendorPages/Dashboard/components/TrendingProductsContainer";
+import { Link } from "react-router-dom";
 
 const dataset = [
   {
@@ -77,34 +77,36 @@ const VendorDashboard = () => {
     <>
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-medium">Overview</h1>
-        <Button
-          text="Add Product"
-          variant="primary"
-          icon={
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6 12H18"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 18V6"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          }
-        />
+        <Link to="/vendor/products/create">
+          <Button
+            text="Add Product"
+            variant="primary"
+            icon={
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 12H18"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 18V6"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            }
+          />
+        </Link>
       </div>
       <DashboardCardsContainer />
       <div className="my-8 grid lg:grid-cols-2 gap-3">

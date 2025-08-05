@@ -7,8 +7,15 @@ import Login from "@pages/Authentication/Login";
 import Register from "@pages/Authentication/Register";
 import Cart from "@pages/Cart/Cart";
 import ProductDetails from "@pages/ProductDetails/ProductDetails";
+import Categories from "@pages/VendorPages/Categories/Categories";
 import VendorDashboard from "@pages/VendorPages/Dashboard/VendorDashboard";
 import Orders from "@pages/VendorPages/Orders/Orders";
+import {
+  CreateProduct,
+  EditProduct,
+  Products,
+  ProductDetails as VendorProductDetails,
+} from "@pages/VendorPages/Products";
 import { createBrowserRouter } from "react-router-dom";
 
 const children = [
@@ -45,6 +52,11 @@ export const router = createBrowserRouter([
     children: [
       { element: <VendorDashboard />, index: true },
       { element: <Orders />, path: "orders" },
+      { element: <Products />, path: "products" },
+      { element: <CreateProduct />, path: "products/create" },
+      { element: <VendorProductDetails />, path: "products/:id" },
+      { element: <EditProduct />, path: "products/:id/edit" },
+      { element: <Categories />, path: "categories" },
       { element: <h1>To be done</h1>, path: "*" },
     ],
   },
